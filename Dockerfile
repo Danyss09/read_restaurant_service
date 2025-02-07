@@ -7,8 +7,8 @@ WORKDIR /app
 # Copiar package.json y package-lock.json para instalar dependencias primero (optimiza la cache de Docker)
 COPY package*.json ./
 
-# Copiar el archivo .env al contenedor
-COPY .env /app/.env
+# Copiar el archivo .env desde la raíz al contenedor
+#COPY .env /app/.env
 
 # Instalar dependencias
 RUN npm install
