@@ -34,3 +34,12 @@ jobs:
             sudo docker run -d --restart always -p 3000:3000 --name read_restaurant_service \
             -e MONGO_URI=${{ secrets.MONGO_URI }} \
             ${{ secrets.DOCKER_USERNAME }}/read_restaurant_service:latest
+            
+            # Recargar los servicios de systemd
+            sudo systemctl daemon-reload
+
+            # Reiniciar el servicio de systemd
+            sudo systemctl restart read_customee_service.service
+
+            # Verificar el estado del servicio
+            sudo systemctl status read_customer_service.service
