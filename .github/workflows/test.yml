@@ -35,11 +35,4 @@ jobs:
             -e MONGO_URI=${{ secrets.MONGO_URI }} \
             ${{ secrets.DOCKER_USERNAME }}/read_restaurant_service:latest
             
-            # Recargar los servicios de systemd
-            sudo systemctl daemon-reload
-
-            # Reiniciar el servicio de systemd
-            sudo systemctl restart read_customer_service.service
-
-            # Verificar el estado del servicio
-            sudo systemctl status read_customer_service.service
+  
