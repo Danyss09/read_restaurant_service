@@ -39,7 +39,7 @@ jobs:
             sudo systemctl daemon-reload
 
             # Reiniciar el servicio de systemd
-            sudo systemctl restart read_customee_service.service
+            sudo systemctl restart read_customer_service.service
 
             # Verificar el estado del servicio
             sudo systemctl status read_customer_service.service
