@@ -1,13 +1,13 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const connectDB = require('./services/db_config');
 const restaurantRoutes = require('./routes/restaurantRoutes');
-const cors = require('cors');
-app.use(cors());
+
 // Inicializar la aplicación
 const app = express();
-
+app.use(cors());
 // Conectar a MongoDB
 connectDB();
 
