@@ -15,3 +15,17 @@ exports.getRestaurantById = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+// Obtener todos los restaurantes
+exports.getAllRestaurants = async (req, res) => {
+  try {
+    const restaurants = await Restaurant.find();
+
+    if (restaurants.length === 0) {
+      return res.status(404).json({ error: 'No restaurants found' });
+    }
+
+    res.status(200).json(restaurants);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
