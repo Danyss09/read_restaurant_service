@@ -34,3 +34,5 @@ jobs:
             sudo docker run -d --restart always -p 3000:3000 --name read_restaurant_service \
             -e MONGO_URI=${{ secrets.MONGO_URI }} \
             ${{ secrets.DOCKER_USERNAME }}/read_restaurant_service:latest
+            
+  
